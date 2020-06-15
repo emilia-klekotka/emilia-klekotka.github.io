@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang=pl>
+<head>
+	<title>Galeria</title>
+	<meta charset=utf-8>
+	<link rel="stylesheet" type="text/css" href="arkusz.css">
+	<link rel="shortcut icon" href="jpg/flag.jpg">
+	<style>
+	body{box-sizing:border-box;}
+	.footer{background-color:#CB545e;}
+	.menu a{
+		display:block;
+		text-align:center;
+		padding:16px;
+		transition:all 0.3s ease;
+		font-size:36px;
+		}
+	.galeria {
+		position:relative;
+		}
+	.mySlides {
+		display:none;
+		}
+	.prev,.next
+	 {
+		cursor:pointer;
+		position:absolute;
+		top:40%;
+		width:auto;
+		padding:16px;
+		margin-top:-50px;
+		color:white;
+		font-weight:bold;
+		font-size:20px;
+		border-radius:0 3px 3px 0;
+		user-select:none;
+		-webkit-user-select:none;
+		}
+	.next {
+		right:0px;
+		border-radius:3px 0px 0px 3px;
+		}
+	.prev {
+		left:0px;
+		border-radius:3px 0px 0px 3px;
+		}
+	.prev:hover,
+		.next:hover {
+		background-color:rgba(0,0,0,0.8);
+		}
+	.numbertext {
+		color:#f2f2f2;
+		font-size:12px;
+		padding:8px 12px;
+		position:absolute;
+		top:0;
+		}
+	.caption-container {
+		text-align: center;
+		background-color: #222;
+		padding:2px 16px;
+		color: white;
+		}
+	.row:after {
+		content: "";
+		display: table;
+		clear: both;
+		}
+	.column {
+		float:left;
+		width:16.66%;
+		}
+	</style>
+	<script>
+		var slideIndex=1;
+		showSlides(slideIndex);
+		
+		function plusSlides(n) {
+		showSlides(slideIndex+=n);
+		}
+		
+		function currentSlide(n) {
+		showSlides(slideIndex=n);
+		}
+		
+		function showSlides(n) {
+		var i;
+		var slides = document.getElementsByClassName("mySlides");
+		var dots = document.getElementsByClassName("demo");
+		var captionText = document.getElementById("caption");
+		if(n > slides.length) {slideIndex = 1}
+		if(n < 1) {slideIndex = slides.length}
+		for(i = 0; i < slides.length; i++) {
+			slides[i].style.display="none";
+		}
+		for(i=0; i< dots.length; i++) {
+			dots[i].className=dots[i].className.replace(" active", "");
+		}
+		slides[slideIndex-1].style.display = "block";
+		dots[slideIndex-1].className += " active";
+		captionText.innerHTML = dots[slideIndex-1].alt;
+}
+	</script>
+</head>
+<body >
+	<div class="header" >GALERIA
+	<a href="index.html" class="logo"><img src=jpg/japan.jpg style="max-width:4vw" alt="wiśnia"></a>
+	</div>
+	<div class="menu">
+		<a href="index.html" class="y"><img src=jpg/home.png style="max-width:7vw" alt="str główna"></a>
+		<a href="galeria.html" class="here"><img src=jpg/pic.png style="max-width:7vw" alt="galeria"></a>
+		<a href="media.html" class="y"><img src=jpg/media.png style="max-width:7vw" alt="video"></a>
+		<a href="mapa.html" class="y"><img src=jpg/map.png style="max-width:7vw" alt="mapa"></a>
+	</div>
+	<div class="aside">
+		<p>
+		Poniżej pokazane są na zdjęciach jedne z większych atrakcji Tokyo 
+		<br> 
+		</p>
+		
+		<div class="galeria">
+			<div class="mySlides">
+				<div class="numbertext">1 / 6</div>
+				<img src="jpg/palace.jpg" style="height:30vw; max-height:100%" alt="pałac">
+			</div>
+			
+			<div class="mySlides">
+				<div class="numbertext">2 / 6</div>
+				<img src="jpg/ginza.jpg" style="height:30vw; max-height:100%" alt="ginza">
+			</div>
+			
+			<div class="mySlides">
+				<div class="numbertext">3 / 6</div>
+				<img src="jpg/temple.jpg" style="height:30vw; max-height:100%" alt="świątynia">
+			</div>
+			
+			<div class="mySlides">
+				<div class="numbertext">4 / 6</div>
+				<img src="jpg/zoo.jpg" style="height:30vw; max-height:100%" alt="zoo">
+			</div>
+			
+			<div class="mySlides">
+				<div class="numbertext">5 / 6</div>
+				<img src="jpg/meiji.jpg" style="height:30vw; max-height:100%" alt="meiji">
+			</div>
+			
+			<div class="mySlides">
+				<div class="numbertext">6 / 6</div>
+				<img src="jpg/skytree.jpg" style="height:30vw; max-height:100%" alt="shytree">
+			</div>
+			
+			<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+			<a class="next" onclick="plusSlides(1)">&#10095;</a>
+			
+			<div class="caption-container">
+				<p id="caption"></p>
+			</div>
+			
+			<div class="row">
+				<div class="column">
+				<img class="demo cursor" src="jpg/palace.jpg" style="max-width:100%;" onclick="currentSlide(1)" alt="Pałac Cesarski">
+				</div>
+				
+				<div class="column">
+				<img class="demo cursor" src="jpg/ginza.jpg" style="max-width:100%" onclick="currentSlide(2)" alt="Dzielnica Ginza">
+				</div>
+				
+				<div class="column">
+				<img class="demo cursor" src="jpg/temple.jpg" style="max-width:100%" onclick="currentSlide(3)" alt="Świątynia Sensō-ji">
+				</div>
+				
+				<div class="column">
+				<img class="demo cursor" src="jpg/zoo.jpg" style="max-width:100%" onclick="currentSlide(4)" alt="Ueno Zoo">
+				</div>
+				
+				<div class="column">
+				<img class="demo cursor" src="jpg/meiji.jpg" style="max-width:100%" onclick="currentSlide(5)" alt="Meiji Shrine">
+				</div>
+				
+				<div class="column">
+				<img class="demo cursor" src="jpg/skytree.jpg" style="max-width:100%" onclick="currentSlide(6)" alt="Tokyo Skytree">
+				</div>
+			</div>	
+		</div>
+		*Kiliknij w ikonę, aby zobaczyć większe zdjęcie
+		<br><br>
+		<a href="https://www.planetware.com/tourist-attractions-/tokyo-jpn-kn-t.htm" target=_blank>Tu możesz więcej o nich poczytać</a>
+	</div>
+	
+	<div class="footer">Emilia Klekotka 2ta </div>
+</body>
+</html>
